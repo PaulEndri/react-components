@@ -29,16 +29,11 @@ class Select extends React.Component {
             action['onChange'] = (v) => this.defaultChange(v);
         }
 
-        return <div className={ "select-container " + (props.className || "") } {...action}>
-            <select className="select-input" name={pros.selectName}>
+        return <div className={ "select-container " + (props.className || "") }>
+            <select className="select-input" name={ pros.selectName } value={ value || "" }  {...action}>
+                <option value = ""></option>
                 {props.options.map(o => {
-                    let selected = {};
-
-                    if(o.value === value) {
-                        selected.selected = true;
-                    }
-
-                    return <option value={o.value} {...selected}>{o.label}</option>;
+                    return <option value={o.value}>{o.label}</option>;
                 })}
             </select>
         </div>;

@@ -61,7 +61,7 @@ class Input extends React.Component {
     render() {
         const props = this.props;
     
-        return <div className={ "input-container " + (props.className || "") } {...action}>
+        return <div className={ "input-container " + (props.className || "") }>
             {this.renderInput(props)}
         </div>;
     }
@@ -70,7 +70,6 @@ class Input extends React.Component {
 Input.propTypes = {
     disabled:  PropTypes.bool,
     label:     PropTypes.string,
-    iconClass: PropTypes.string,
     className: PropTypes.string,
     trigger:   PropTypes.string,
     handler:   PropTypes.func
